@@ -35,7 +35,6 @@ test.group('Configure', (group) => {
     await fs.create('adonisrc.ts', `export default defineConfig({})`)
     await fs.create('start/kernel.ts', `router.use([])`)
     await fs.create('inertia/app/app.ts', ``)
-    await fs.create('package.json', JSON.stringify({ dependencies: { '@adonisjs/inertia': '*' } }))
 
     const ace = await app.container.make('ace')
 
