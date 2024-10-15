@@ -1,0 +1,14 @@
+{{{
+  exports({ to: app.configPath('avenue.ts') })
+}}}
+import { defineConfig } from '@foadonis/avenue'
+import { InferRoutes } from '@foadonis/avenue/types'
+import type routes from '@foadonis/avenue/routes'
+
+export default defineConfig({
+  autogenerate: true,
+})
+
+declare module '@foadonis/avenue/types' {
+  export interface RoutesList extends InferRoutes<typeof routes> {}
+}
